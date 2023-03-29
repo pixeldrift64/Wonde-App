@@ -23,6 +23,7 @@ class Employees {
 
                 $lesson->class = $class;
                 $lessonsData[$lesson->period->data->day][$lesson->start_at->date] = $lesson;
+                ksort($lessonsData[$lesson->period->data->day]);
             }
         }
 

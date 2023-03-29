@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employees;
+use Illuminate\Support\Facades\Log;
 use stdClass;
 use Wonde\Client;
 
@@ -25,6 +26,7 @@ class AppController extends Controller
             }
             else {
                 session()->flash('error', 'Unable to retrieve data from the Wonde API. Please try again later or contact an administrator.');
+                Log::warning('API error '.$e->getMessage());
             }
 
             $employee = new stdClass();
@@ -56,6 +58,7 @@ class AppController extends Controller
                 abort(404);
             }
 
+            Log::warning('API error '.$e->getMessage());
             return redirect(route('dashboard'))
                 ->with('error', 'Unable to retrieve data from the Wonde API. Please try again later or contact an administrator.');
         }
