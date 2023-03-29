@@ -12,19 +12,16 @@ class AppController extends Controller
     public function index(Client $client)
     {
         try {
-
             $employee = $client
                 ->school(env('WONDE_SCHOOL_ID'))
                 ->employees
                 ->get(auth()->user()->wonde_employee_id, ['classes.lessons.period']);
 
             $lessonsForWeek = Employees::getLessonsForCurrentWeek($employee);
-
         } catch (\Exception $e) {
             if ($e->getCode() === 404) {
                 session()->flash('error', 'Your Wonde Employee ID was not found. Please contact an administrator.');
-            }
-            else {
+            } else {
                 session()->flash('error', 'Unable to retrieve data from the Wonde API. Please try again later or contact an administrator.');
                 Log::warning('API error '.$e->getMessage());
             }
@@ -43,7 +40,6 @@ class AppController extends Controller
     {
 
         try {
-
             $lesson = $client
                 ->school(env('WONDE_SCHOOL_ID'))
                 ->lessons

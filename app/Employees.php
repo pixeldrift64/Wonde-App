@@ -1,7 +1,8 @@
 <?php
 namespace App;
 
-class Employees {
+class Employees
+{
 
     public static function getLessonsForCurrentWeek($employee): array
     {
