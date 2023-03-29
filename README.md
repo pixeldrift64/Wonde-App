@@ -10,7 +10,9 @@
 </p>
 
 ## Wonde Example App
-This Application uses the Wonde API to display information about the lessons and classes that an employee of a school will have in the current week.
+This Application uses the Wonde API to display information about the lessons and classes that an employee of a school will have in the current week. It is quite a basic app as it is only an example, but could be expanded on to provide more data from the Wonde API.
+
+In order to satisfy the User Story and display all their classes and students for a given week, I am fetching their lessons for the week, and then displaying a list of students for each class assigned to the lessons that they are the teacher for.
 
 ### Getting Started
 This project can be run locally using Docker and Laravel Sail. To get started, run the following commands:
@@ -31,7 +33,7 @@ these users will be visible in the users table and all have the password `passwo
 Thank you for taking the time to view my example app. During the creation of this application I made several observations and assumptions which I have documented here.
 
 ### Application Setup & Scope
-This application has been built to fulfil the user story on the assumption that it will be run as a single tenancy system installed by a school and accessing the Wonde API. Therefore, the Wonde School ID is set in the .env file and sent through explicitly to the Wonde API Client. Users have a wonde_employee_id field which is used when making requests to the API to get the data for the employee who is logged in.
+This application has been built to fulfil the user story on the assumption that it will be run as a single tenancy system installed by a school and accessing the Wonde API. Therefore, the Wonde School ID is set in the .env file and sent through explicitly to the Wonde API Client. Users have a wonde_employee_id field which is used when making requests to the API to get the data for the employee who is logged in. It is also assumed that the School Name will be set as the APP_NAME variable. This saves making another API request for this info.
 
 I have used the standard Laravel Auth scaffolding to implement a quick and robust authentication system.
 
