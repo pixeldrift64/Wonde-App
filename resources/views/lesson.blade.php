@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <a class="text-indigo-500" href="{{ route('dashboard') }}">Dashboard</a> / {{ $class->name }} - {{ \Carbon\Carbon::parse($lesson->start_at->date, $lesson->start_at->timezone)->format('d/m/Y') }}
+            <a class="text-indigo-500" href="{{ route('dashboard') }}">Dashboard</a> / {{ $class->name }} - {{ \Carbon\Carbon::parse($lesson->start_at->date, $lesson->start_at->timezone)->setTimezone(config('app.timezone'))->format('d/m/Y') }}
         </h2>
     </x-slot>
 
@@ -13,8 +13,8 @@
                         Lesson Details
                     </h2>
                     <p><b>Subject:</b> {{ $subject->name ?? "None" }}</p>
-                    <p><b>Starts at:</b> {{ \Carbon\Carbon::parse($lesson->start_at->date, $lesson->start_at->timezone)->format('d/m/Y \a\t\ h:ia') }}</p>
-                    <p><b>Ends at:</b> {{ \Carbon\Carbon::parse($lesson->end_at->date, $lesson->end_at->timezone)->format('d/m/Y \a\t\ h:ia') }}</p>
+                    <p><b>Starts at:</b> {{ \Carbon\Carbon::parse($lesson->start_at->date, $lesson->start_at->timezone)->setTimezone(config('app.timezone'))->format('d/m/Y \a\t\ h:ia') }}</p>
+                    <p><b>Ends at:</b> {{ \Carbon\Carbon::parse($lesson->end_at->date, $lesson->end_at->timezone)->setTimezone(config('app.timezone'))->format('d/m/Y \a\t\ h:ia') }}</p>
 
                     <ul role="list" class="divide-y divide-gray-20 mt-4">
                         <li class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white">

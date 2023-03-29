@@ -46,7 +46,7 @@ This application makes use of the Wonde PHP SDK, which has been integrated using
 
 As previously mentioned, the Employee ID sent in the requests is tied to the user in Laravel. There is some middleware in place to log the user out if they are missing this ID, as the app relies on it.
 
-The app makes a request to the Wonde API on every page load. In a real world application I would either implement caching to reduce the amount of API requests being sent to the Wonde API, or implement syncing of data and use Eloquent Models to save the data locally within our app, however for the purposes of this example app this has not been done. The data is currently being manipulated directly as arrays instead of being converted to Models.
+The app makes a request to the Wonde API on every page load. In a real world application I would either implement caching to reduce the amount of API requests being sent to the Wonde API, or implement syncing of data and use Eloquent Models to save the data locally within our app, however for the purposes of this example app this has not been done. The data is currently being manipulated directly as objects returned from the API instead of being converted to Models.
 
 ### Employees Class
 I have created an Employees class to store Business Logic. This currently has a function that converts the API response data into a format that I can loop over in the view nicely to display an employee's classes for the current week.
