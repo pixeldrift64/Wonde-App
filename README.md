@@ -34,9 +34,7 @@ Run `./vendor/bin/sail artisan key:generate` to generate the application key.
 
 Run `./vendor/bin/sail artisan migrate` to run migrations.
 
-To seed the database with test users for the example, run `./vendor/bin/sail artisan db:seed`. This will create several users in the database corresponding to users in the Wonde Testing School from the API. these users will be visible in the users table and all have the password `password`.
-
-An example user you can log in with to test is `stevendumbell@wonde.com`
+To seed the database with test users for the example, run `./vendor/bin/sail artisan db:seed`. This will create several users in the database corresponding to users in the Wonde Testing School from the API. these users will be visible in the users table and all have the password `password`. An example user you can log in with to test is `stevendumbell@wonde.com`
 
 Run `npm install && npm run dev` to build the frontend for the application locally.
 
