@@ -15,11 +15,26 @@ This Application uses the Wonde API to display information about the lessons and
 In order to satisfy the User Story and display all their classes and students for a given week, I am fetching their lessons for the week, and then displaying a list of students for each class assigned to the lessons that they are the teacher for.
 
 ### Getting Started
-This project can be run locally using Docker and Laravel Sail. To get started, run the following commands:
+This project can be run locally using Docker and Laravel Sail. To get started, clone the project, cd to the directory and follow these steps:
 
-`composer install`
-`./vendor/bin/sail up`
-`php artisan migrate`
+Run this command to install the application's dependencies:
+```
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs
+```
+Copy `.env.example` to `.env`, and set the `WONDE_TOKEN` variable to your API token. 
+
+Run `./vendor/bin/sail` to build and start the docker containers.
+
+Run `./vendor/bin/sail artisan key:generate` to generate the application key.
+
+Run `./vendor/bin/sail artisan migrate` to run migrations.
+
+Run `npm install && npm run dev` to build the frontend for the application locally.
 
 The docker containers will be created and the application initialised, once this is done you can view the application at http://localhost
 
