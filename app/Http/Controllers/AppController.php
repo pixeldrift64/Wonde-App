@@ -59,6 +59,10 @@ class AppController extends Controller
                 ->with('error', 'Unable to retrieve data from the Wonde API. Please try again later or contact an administrator.');
         }
 
+        if ($lesson->employee !== auth()->user()->wonde_employee_id) {
+            abort(404);
+        }
+
         return view('lesson', [
             'lesson' => $lesson,
             'class' => $class,

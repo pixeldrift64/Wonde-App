@@ -16,11 +16,14 @@ class UserSeeder extends Seeder
     {
 
         $exampleEmployees = [
-            "Kris Wells" => "A571916931",
-            "Mary Anderson" => "A199135293",
-            "Andrea Batchley" => "A1412171282",
-            "Donna Daylow" => "A619311386",
-            "Steven Dumbell" => "A921160679"
+            "Selina Andrews" => "A500460806",
+            "Adrian Blacker" => "A2082387062",
+            "Lynn Chase" => "A1018509654",
+            "Steven Dumbell" => "A921160679",
+            "Ruth Hatchett" => "A593143780",
+            "Christopher Jones" => "A1535425120",
+            "Mark Lubbock" => "A269983963",
+            "Delia Mumford" => "A39307028",
         ];
 
         foreach ($exampleEmployees as $name => $id) {

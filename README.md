@@ -50,6 +50,10 @@ The app makes a request to the Wonde API on every page load. In a real world app
 
 The data is currently being used directly as objects returned from the API, however if I were to expand on this application I would start using Models to hold and manipulate data, which would give me more flexibility and control over the validation and use of data in the app, rather than just using whatever is returned from the API untouched.
 
+### Classes / Registration Groups
+As mentioned in the API docs, primary school students are usually taught in registration groups, whereas secondary students are taught in classes. The app currently only supports classes, however if I were to continue working on it I would add support for registration groups and thus primary schools. For the purposes of this demo I have just added support for classes.
+
+
 ### Employees Class
 I have created an Employees class to store Business Logic. This currently has a function that converts the API response data into a format that I can loop over in the view nicely to display an employee's classes for the current week.
 

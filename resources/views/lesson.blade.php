@@ -12,7 +12,6 @@
                     <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-2">
                         Lesson Details
                     </h2>
-                    <p><b>Subject:</b> {{ $subject->name ?? "None" }}</p>
                     <p><b>Starts at:</b> {{ \Carbon\Carbon::parse($lesson->start_at->date, $lesson->start_at->timezone)->setTimezone(config('app.timezone'))->format('d/m/Y \a\t\ h:ia') }}</p>
                     <p><b>Ends at:</b> {{ \Carbon\Carbon::parse($lesson->end_at->date, $lesson->end_at->timezone)->setTimezone(config('app.timezone'))->format('d/m/Y \a\t\ h:ia') }}</p>
 
