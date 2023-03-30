@@ -28,21 +28,19 @@ docker run --rm \
 ```
 Copy `.env.example` to `.env`, and set the `WONDE_TOKEN` variable to your API token. 
 
-Run `./vendor/bin/sail` to build and start the docker containers.
+Run `./vendor/bin/sail up` to build and start the docker containers.
 
 Run `./vendor/bin/sail artisan key:generate` to generate the application key.
 
 Run `./vendor/bin/sail artisan migrate` to run migrations.
 
+To seed the database with test users for the example, run `./vendor/bin/sail artisan db:seed`. This will create several users in the database corresponding to users in the Wonde Testing School from the API. these users will be visible in the users table and all have the password `password`.
+
+An example user you can log in with to test is `stevendumbell@wonde.com`
+
 Run `npm install && npm run dev` to build the frontend for the application locally.
 
-The docker containers will be created and the application initialised, once this is done you can view the application at http://localhost
-
-In order to use the application, you will need to add a Wonde API token and School ID to the .env file.
-
-To add example users which are setup with employee details and IDs for the school ID `A1930499544`, run the following command:
-`php artisan db:seed`
-these users will be visible in the users table and all have the password `password`.
+The application should now be up and visible at `http://localhost`
 
 ## Notes & Observations
 Thank you for taking the time to view my example app. During the creation of this application I made several observations and assumptions which I have documented here.
